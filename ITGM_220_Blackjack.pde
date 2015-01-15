@@ -61,7 +61,35 @@ void draw() {
 //--------------------
 // keyPressed() is called by processing when the user presses a key
 //
+int specialKey = -1;                  // declare a variable that can remember if a special key ws pressed
 void keyPressed() {
-  game.handleInput(key);          // pass the key directly to the game 
+  if(key == CODED){               // first see if any special keys were pressed
+    specialKey = keyCode;             // if a special key was pressed, make note of which key it was
+    println("omg special key "+str(specialKey)+" was pressed!");  // this is just here for debug
+  }
+  else{
+    if(specialKey != -1){       // if the user previously pressed a special key, then do a special action, determined by what key the user just pressed
+      switch(specialKey){
+        case SHIFT:
+          println("the shift key was pressed");
+          saveFrame("data/screenshot-###.png");
+          println("just saved a screeenshot");
+          break;
+        case CONTROL:
+          println("the control key was pressed");
+          break;
+        case ALT:
+          println("the alt key was pressed");
+          break;
+        default:
+          println("the up, down, left, or right arrows, or the page up, page down, home or end key was pressed.");
+          break;
+      }
+      specialKey = -1;          // clear the value of the special key
+    }
+    else{  
+      game.handleInput(key);      // else, pass the key directly to the game
+    }
+  }
 }
 
