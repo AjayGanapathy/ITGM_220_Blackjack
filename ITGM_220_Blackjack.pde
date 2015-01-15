@@ -32,7 +32,7 @@
 //
 //===============================================
 
-final String version = "Learning About Blackjack - Baseline 2015_01_08";
+final String version = "Ajay Ganapathy";
 
 //--------------------
 
