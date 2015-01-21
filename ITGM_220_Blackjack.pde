@@ -82,8 +82,9 @@ void keyPressed() {
                 break;
               case 'd':
                 // toggle debug
+                game.ui.toggleDebug();
                 break;
-              default
+              default:
                 println("ctrl + "+str(key)+" was pressed");
                 break;
           }
