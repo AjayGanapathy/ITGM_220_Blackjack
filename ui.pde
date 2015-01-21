@@ -110,7 +110,8 @@ class UI {
         translate(-350,200,0);
         drawTextDS( false, 0,  0,0, DEBUG_TEXT, "-- DEBUG --" );
         drawTextDS( false, 0,-25,0, DEBUG_TEXT, "state: "  + game.state.toString()     );
-        drawTextDS(false, 0, -50,0, DEBUG_TEXT, str(game.dealer.deck.numCards)+" cards left in deck"); 
+        drawTextDS(false, 0, -50,0, DEBUG_TEXT, str(game.dealer.deck.numCards)+" cards left in deck");
+        drawTextDS(false, 0, -75,0, DEBUG_TEXT, "Value of dealer's hand is "+str(game.dealer.hand.value)); 
       popMatrix();
     }
   }
