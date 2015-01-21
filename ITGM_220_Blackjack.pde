@@ -84,6 +84,9 @@ void keyPressed() {
                 // toggle debug
                 game.ui.toggleDebug();
                 break;
+              case 'g':
+                //toggle grid
+                cam.toggleGrid();
               default:
                 println("ctrl + "+str(key)+" was pressed");
                 break;
