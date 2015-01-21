@@ -72,11 +72,22 @@ void keyPressed() {
       switch(specialKey){
         case SHIFT:
           println("the shift key was pressed");
-          saveFrame("data/screenshot-###.png");
-          println("just saved a screeenshot");
           break;
         case CONTROL:
           println("the control key was pressed");
+          switch(key){
+              case 's':
+                saveFrame("data/screenshot-###.png");
+                println("just saved a screeenshot");
+                break;
+              case 'd':
+                // toggle debug
+                break;
+              default
+                println("ctrl + "+str(key)+" was pressed");
+                break;
+          }
+
           break;
         case ALT:
           println("the alt key was pressed");
