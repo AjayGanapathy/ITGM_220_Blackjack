@@ -101,7 +101,7 @@ class PlayerList {
     }
     else{
       //layout the table for n players
-      float arcAngle = 35; //maybe later add a function that starts arc angle at 0 for a one player setup, and eases up to a clamp for an n player setup?
+      float arcAngle = 73; //maybe later add a function that starts arc angle at 0 for a one player setup, and eases up to a clamp for an n player setup?
       float arcYOffset = -100; //offset the arc from the dealer
       float radius = getRadius(numberOfPlayers, arcAngle);
       float arcStart = -1*arcAngle/2;
