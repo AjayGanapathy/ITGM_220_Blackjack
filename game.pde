@@ -19,7 +19,7 @@ class Game {
   Player           player;           // the current player
   UI               ui;               // the user interface
   GameState        state;            // internal game state
-  
+   
   Game() {
     dealer = new Dealer(0,175,0);
     list   = new PlayerList(dealer);
@@ -72,6 +72,7 @@ class Game {
   }
   
   void display() {
+    background(loadImage("playScreen.jpg"));
     list.display();
     ui.display();
   }

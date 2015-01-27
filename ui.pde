@@ -55,6 +55,7 @@ class UI {
   void display() {
     switch ( game.state ) {
       case READY:
+        background(loadImage("splashScreen.jpg"));
         displaySplashText( "Simple Blackjack", "press any key to continue" );
         break;
         

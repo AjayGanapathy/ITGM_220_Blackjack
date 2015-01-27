@@ -42,7 +42,7 @@ class MA_SimpleOrtho {
   // called at the beginning of a frame (bookends, see endFrame() below)
   //
   void beginFrame() {
-    drawBackground("splashScreen.jpg"); 
+    //nothing inside here, for now
   }
   
   // called to evaluate the camera (this is the critical method)
@@ -108,24 +108,6 @@ class MA_SimpleOrtho {
       vertex( hi, x );
     }
     endShape();
-  }
-  
-  void drawBgSplashScreen(){
-  //call draw bg with image string splash screen
-  };
-  
-  void drawBgGameScreen(){
-  //call draw bg with image string game screen
-  };
-  
-  void drawBackground(String backgroundImageString){
-    try{
-      background(loadImage(backgroundImageString));
-    }
-    catch(Exception e){
-    //if unable to load bg image, default to bg color
-      background(NORMAL_BG);
-    }
   }
 }
 
