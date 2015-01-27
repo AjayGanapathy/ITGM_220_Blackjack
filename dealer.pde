@@ -25,7 +25,7 @@ class Dealer extends Player {
 
   Dealer( float x, float y, float r ) {
     super(x,y,r);
-    hand = new Hand(0,0);
+    hand = new DealerHand(0,0);
     deck = new Deck(550,250);         // instantiate the deck
     reset();
   }
