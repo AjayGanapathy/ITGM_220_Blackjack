@@ -47,7 +47,7 @@ class UI {
   boolean  debug;
 
   UI() {
-    font = loadFont( "Helvetica-24.vlw" );
+    font = loadFont( "Team401-12.vlw" );
     textFont(font);
     debug = false;
   }
