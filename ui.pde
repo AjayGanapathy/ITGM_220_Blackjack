@@ -38,7 +38,7 @@ final float SCORE_X  =    0; // position of score text, relative to the hand
 final float SCORE_Y  = -130;
 final float SCORE_Z  =   -3;
 final float RESULT_X =    0; // position of result text, relative to the hand
-final float RESULT_Y =  158;
+final float RESULT_Y =    0;
 final float RESULT_Z =   -3;
 
 
@@ -101,8 +101,25 @@ class UI {
     drawTextDS( true, SCORE_X,SCORE_Y,SCORE_Z, SCORE_TEXT, s );
   }
   
-  void displayResult( String s ) {
-    drawTextDS( true, RESULT_X,RESULT_Y,RESULT_Z, MAIN_TEXT, s );
+  void displayResult( Result result) {
+//    drawTextDS( true, RESULT_X,RESULT_Y,RESULT_Z, MAIN_TEXT, s );
+    switch(result){
+      case PLAYER_WINS:
+        //do something
+        image(loadImage("win.png"),RESULT_X,RESULT_Y);
+        break;
+      case PLAYER_LOSES:
+        //do something
+        image(loadImage("lose.png"),RESULT_X,RESULT_Y);
+        break;
+      case PUSH:
+        //do something
+        image(loadImage("push.png"),RESULT_X,RESULT_Y);
+        break;
+      default:
+        //do nothing
+        break;
+    }
   }
   
   void displayDebugText() {
