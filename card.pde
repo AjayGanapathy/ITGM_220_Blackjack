@@ -50,7 +50,8 @@ class Card {
       fill(128,128);          // display a drop shadow first
       noStroke();
       rectMode(CENTER);
-      rect( 0,0, dsW,dsH, 5 );
+//      rect( 0,0, dsW,dsH, 5 );
+      rect(0,0, dsW, dsH);
       
       imageMode(CENTER);      // then display the card
       if ( down ) {

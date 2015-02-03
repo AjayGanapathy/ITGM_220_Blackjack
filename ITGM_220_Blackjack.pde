@@ -31,6 +31,29 @@
 // cases are, in effect, just noise.
 //
 //===============================================
+/*
+  @pjs  preload="card_ACE_CLUBS.png, card_ACE_DIAMONDS.png, card_ACE_HEARTS.png, card_ACE_SPADES.png, 
+        card_back.png, 
+        card_TWO_CLUBS.png, card_TWO_DIAMONDS.png, card_TWO_HEARTS.png, card_TWO_SPADES.png, 
+        card_THREE_CLUBS.png, card_THREE_DIAMONDS.png, card_THREE_HEARTS.png, card_THREE_SPADES.png,           
+        card_FOUR_CLUBS.png, card_FOUR_DIAMONDS.png, card_FOUR_HEARTS.png, card_FOUR_SPADES.png,         
+        card_FIVE_CLUBS.png, card_FIVE_DIAMONDS.png, card_FIVE_HEARTS.png, card_FIVE_SPADES.png, 
+        card_SIX_CLUBS.png, card_SIX_DIAMONDS.png, card_SIX_HEARTS.png, card_SIX_SPADES.png, 
+        card_SEVEN_CLUBS.png, card_SEVEN_DIAMONDS.png, card_SEVEN_HEARTS.png, card_SEVEN_SPADES.png,
+        card_EIGHT_CLUBS.png, card_EIGHT_DIAMONDS.png, card_EIGHT_HEARTS.png, card_EIGHT_SPADES.png, 
+        card_NINE_CLUBS.png, card_NINE_DIAMONDS.png, card_NINE_HEARTS.png, card_NINE_SPADES.png,
+        card_TEN_CLUBS.png, card_TEN_DIAMONDS.png, card_TEN_HEARTS.png, card_TEN_SPADES.png,  
+        card_JACK_CLUBS.png, card_JACK_DIAMONDS.png, card_JACK_HEARTS.png, card_JACK_SPADES.png, 
+        card_QUEEN_CLUBS.png, card_QUEEN_DIAMONDS.png, card_QUEEN_HEARTS.png, card_QUEEN_SPADES.png,
+        card_KING_CLUBS.png, card_KING_DIAMONDS.png, card_KING_HEARTS.png, card_KING_SPADES.png, 
+        lose.png, 
+        playScreen.jpg, 
+        push.png, 
+        splashScreen.jpg, 
+        win.png";
+        font="Team_401.ttf";
+*/
+
 
 final String version = "Ajay Ganapathy";
 
@@ -44,7 +67,9 @@ Game            game;             // declare the game
 //
 void setup() {
   size(1280,720,OPENGL);          // open a window
-  frame.setTitle(version);        // set the frame title
+  frameRate(60);
+//  size(1280,720);
+//  frame.setTitle(version);        // set the frame title
   println(version);               // print out the version info
   
   cam  = new MA_SimpleOrtho();    // instantiate the camera
@@ -65,7 +90,6 @@ int specialKey = -1;              // declare a variable that can remember if a s
 void keyPressed() {
   if(key == CODED){               // first see if any special keys were pressed
     specialKey = keyCode;         // if a special key was pressed, make note of which key it was
-    println("omg special key "+str(specialKey)+" was pressed!");  // this is just here for debug
   }
   else{
     if(specialKey != -1){         // if the user previously pressed a special key, then do a special action, determined by what key the user just pressed

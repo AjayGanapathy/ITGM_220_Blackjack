@@ -34,9 +34,11 @@ class Game {
     
     switch ( state ) {
       case GameState.READY:
+        println("READY");
         ui.display();                // ui only in READY state
         break;
       case GameState.DEALING:
+        println("DEALING");
         if ( dealer.dealCardTo(player) ) {
           nextPlayer(false);
         }
@@ -46,12 +48,14 @@ class Game {
         display();
         break;
       case GameState.PLAYER_TURN:
+        println("PLAYER TURN");
         if ( player.hand.busted ) {
           nextPlayer(true);
         }
         display();
         break;
       case GameState.DEALER_TURN:
+        println("DEALER TURN");
         if ( allDone() ) {
           determineResults();
         } else {
@@ -60,6 +64,7 @@ class Game {
         display();
         break;
       case GameState.SHOW_RESULTS:
+        println("SHOW RESULTS");
         display();
         list.displayResults();
         break;
@@ -69,7 +74,11 @@ class Game {
   }
   
   void display() {
-    background(loadImage("playScreen.jpg"));
+//    background(loadImage("playScreen.jpg"));
+//    pushMatrix();
+//    scale(1,-1);
+//    image(loadImage("playScreen.jpg"),-width/2,-height/2);
+//    popMatrix();
     list.display();
     ui.display();
   }

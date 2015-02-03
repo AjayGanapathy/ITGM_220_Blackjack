@@ -59,7 +59,7 @@ class MA_SimpleOrtho {
     
     resetMatrix();                        // this is loadIdentity()
     scale( 1, -1, 1 );                    // these two compensate for processing's
-    translate( -width/2, -height/2, 0 );  //   wacky insistence on origin at top left
+//    translate( width/2, height/2, 0 );  //   wacky insistence on origin at top left
   }                                       //   and y-axis pointed down....
   
   // called at the end of a frame (bookends, see beginFrame() above)

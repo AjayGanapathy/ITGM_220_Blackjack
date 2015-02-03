@@ -47,7 +47,8 @@ class UI {
   boolean  debug;
 
   UI() {
-    font = loadFont( "Team401-12.vlw" );
+//    font = loadFont( "Team401-12.vlw" ); //uncomment for java mode
+    font = createFont("Team_401",12); //comment for js mode
     textFont(font);
     debug = false;
   }
@@ -55,30 +56,47 @@ class UI {
   void display() {
     switch ( game.state ) {
       case GameState.READY:
-        background(loadImage("splashScreen.jpg"));
+        displaySplashScreen();
         displaySplashText( "Simple Blackjack", "press any key to continue" );
         break;
         
       case GameState.DEALING:
+        displayPlayScreen();
         displayMainText( "-- Dealing --", "stand by..." );
         displayDebugText();
         break;
         
       case GameState.PLAYER_TURN:
+        displayPlayScreen();
         displayMainText( "-- Player's turn --", "'h' to hit, 's' to stand" );
         displayDebugText();
         break;
         
       case GameState.DEALER_TURN:
+        displayPlayScreen();
         displayMainText( "-- Dealer's turn --", "stand by..." );
         displayDebugText();
         break;
         
       case GameState.SHOW_RESULTS:
+        displayPlayScreen();
         displayMainText( "press any key", "to continue" );
         displayDebugText();
         break;
     }
+  }
+  void displaySplashScreen(){
+    pushMatrix();
+    scale(1,-1);
+//    image(loadImage("splashScreen.jpg"),-width/2,-height/2);
+    popMatrix();
+  }
+  
+  void displayPlayScreen(){
+    pushMatrix();
+    scale(1,-1);
+    image(loadImage("playScreen.jpg"),-width/2,-height/2);
+    popMatrix();  
   }
   
   void displaySplashText( String s1, String s2 ) {
