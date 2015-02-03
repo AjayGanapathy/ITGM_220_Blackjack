@@ -14,9 +14,9 @@
 // main color palette
 //
 final color NORMAL_BG    = color(  50,  70,  35 );      // bg color
-final color SEMITRANS_BG = color(  50,  70,  35, 192 ); // semi-transparent bg
+final color SEMITRANS_BG = color(  10,  10,  10, 200 ); // semi-transparent bg
 final color DROP_SHADOW  = color(  20,  30,  20 );      // drop shadow color
-final color SPLASH_TEXT  = color( 252, 212,  15 );      // splash text color
+final color SPLASH_TEXT  = color( 222, 148,  1 );      // splash text color
 final color MAIN_TEXT    = SPLASH_TEXT;                 // main text color
 final color SCORE_TEXT   = color( 204, 204, 204 );      // score text color
 final color DEBUG_TEXT   = color( 125, 140, 252 );      // debug text color
