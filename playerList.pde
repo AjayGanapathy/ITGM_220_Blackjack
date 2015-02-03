@@ -125,7 +125,7 @@ class PlayerList {
   }
   
   float getRotation(float arcStart, float arcAngle, int playerIndex, int numberOfPlayers){
-        return arcStart+arcAngle*playerIndex/(numberOfPlayers-1);
+        return arcStart+arcAngle*(numberOfPlayers-playerIndex-1)/(numberOfPlayers-1);
   }
   
   float getRadiusYOffset(float arcStart, float radius){
