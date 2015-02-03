@@ -31,8 +31,10 @@ class Deck {
     card = new Card[MAX_CARDS];
     
     numCards = 0;
-    for ( Suit s : Suit.values() ) {    // loop over suits
-      for ( Rank r : Rank.values() ) {    // loop over ranks
+//    for ( Suit s : Suit.values() ) {    // loop over suits
+      for(int s=0; s<4; s++){ 
+//      for ( Rank r : Rank.values() ) {    // loop over ranks
+        for(int r=0; r<13; r++){
         orig[numCards] = new Card(r,s);     // instantiate a new card
         numCards++;                         // increment the count
       }

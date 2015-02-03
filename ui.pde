@@ -54,27 +54,27 @@ class UI {
   
   void display() {
     switch ( game.state ) {
-      case READY:
+      case GameState.READY:
         background(loadImage("splashScreen.jpg"));
         displaySplashText( "Simple Blackjack", "press any key to continue" );
         break;
         
-      case DEALING:
+      case GameState.DEALING:
         displayMainText( "-- Dealing --", "stand by..." );
         displayDebugText();
         break;
         
-      case PLAYER_TURN:
+      case GameState.PLAYER_TURN:
         displayMainText( "-- Player's turn --", "'h' to hit, 's' to stand" );
         displayDebugText();
         break;
         
-      case DEALER_TURN:
+      case GameState.DEALER_TURN:
         displayMainText( "-- Dealer's turn --", "stand by..." );
         displayDebugText();
         break;
         
-      case SHOW_RESULTS:
+      case GameState.SHOW_RESULTS:
         displayMainText( "press any key", "to continue" );
         displayDebugText();
         break;
@@ -101,18 +101,18 @@ class UI {
     drawTextDS( true, SCORE_X,SCORE_Y,SCORE_Z, SCORE_TEXT, s );
   }
   
-  void displayResult( Result result) {
+  void displayResult( int result) {
 //    drawTextDS( true, RESULT_X,RESULT_Y,RESULT_Z, MAIN_TEXT, s );
     switch(result){
-      case PLAYER_WINS:
+      case Result.PLAYER_WINS:
         //do something
         image(loadImage("win.png"),RESULT_X,RESULT_Y);
         break;
-      case PLAYER_LOSES:
+      case Result.PLAYER_LOSES:
         //do something
         image(loadImage("lose.png"),RESULT_X,RESULT_Y);
         break;
-      case PUSH:
+      case Result.PUSH:
         //do something
         image(loadImage("push.png"),RESULT_X,RESULT_Y);
         break;
@@ -127,7 +127,7 @@ class UI {
       pushMatrix();
         translate(-350,200,0);
         drawTextDS( false, 0,  0,0, DEBUG_TEXT, "-- DEBUG --" );
-        drawTextDS( false, 0,-25,0, DEBUG_TEXT, "state: "  + game.state.toString()     );
+//        drawTextDS( false, 0,-25,0, DEBUG_TEXT, "state: "  + game.state.toString()     );
         drawTextDS(false, 0, -50,0, DEBUG_TEXT, str(game.dealer.deck.numCards)+" cards left in deck");
         drawTextDS(false, 0, -75,0, DEBUG_TEXT, "Value of dealer's hand is "+str(game.dealer.hand.value)); 
       popMatrix();

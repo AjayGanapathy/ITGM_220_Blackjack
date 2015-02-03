@@ -17,7 +17,7 @@ class Player {
   float     rotZ;           // base rotation of this player
   boolean   active;         // true iff this player is active, false otherwise
   boolean   show;           // true shows score, false doesn't
-  Result    result;         // result of this player's hand (who won?)
+  int       result;         // result of this player's hand (who won?)
 
   Player( float x, float y, float r ) {
     hand   = new Hand(0,0);

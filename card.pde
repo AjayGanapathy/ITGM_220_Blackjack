@@ -13,18 +13,18 @@
 //===============================================
 
 class Card {    
-  Rank     rank;            // rank of this particular card
-  Suit     suit;            // suit of this particular card
+  int     rank;            // rank of this particular card
+  int     suit;            // suit of this particular card
   PImage   frnt,back;       // images for front/back side of this card
   float    posX,posY;       // position of this particular card
   float    rotZ;            // rotation of this particular card
   boolean  down;            // true iff card facing down, false otherwise
   float    dsW,dsH;         // width and height of drop shadow rectangle
 
-  Card( Rank r, Suit s ) {    
+  Card( int r, int s ) {    
     rank = r;
     suit = s;
-    frnt = loadImage( "card_" + rank + "_" + suit + ".png" );
+    frnt = loadImage( "card_" + Rank.toString(r) + "_" + Suit.toString(s) + ".png" );
     back = loadImage( "card_back.png"                      );
     down = true;            // default to face down
     pos(0,0);               // default to origin, this is set later by Hand

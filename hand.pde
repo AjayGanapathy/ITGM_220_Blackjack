@@ -57,7 +57,8 @@ class Hand {
       if ( card[i].rank == Rank.ACE ) {
         numAces++;
       }
-      value += card[i].rank.value;
+//      value += card[i].rank.value;
+        value += Rank.pointValue(card[i].rank);
     }
     
     // if busted using elevens, then keep trying with aces as one
@@ -85,11 +86,11 @@ class Hand {
     popMatrix();
   }
   
-  void displayResult( Result result ) {
+  void displayResult( int result ) {
     pushMatrix();
       translate(posX,posY,0);
       if ( result != Result.NONE ) {
-        game.ui.displayResult(result);
+//        game.ui.displayResult(result);
       }
     popMatrix();
   }
