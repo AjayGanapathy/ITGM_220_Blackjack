@@ -16,7 +16,7 @@ abstract static class Rank{
   static int pointValue(int rank){
     switch(rank){  
       case 0:
-          return 1;
+          return 11;
       case 1:
           return 2;          
       case 2:

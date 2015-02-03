@@ -57,8 +57,7 @@ class Hand {
       if ( card[i].rank == Rank.ACE ) {
         numAces++;
       }
-//      value += card[i].rank.value;
-        value += Rank.pointValue(card[i].rank); ////PROBLEM - SLIPPING ACES!  the modified ace value isn't sticking!
+        value += Rank.pointValue(card[i].rank);
     }  
     // if busted using elevens, then keep trying with aces as one
     while ( (value > 21)  &&  (numAces > 0) ) {
