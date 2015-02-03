@@ -18,23 +18,14 @@ class Game {
   PlayerList       list;             // the list of players (including the dealer)
   Player           player;           // the current player
   UI               ui;               // the user interface
-//  GameState        state;            // internal game state
-//  String           state;
-  int              state;
+  int              state;            // internal game state
 
-//all possible game states
-//  final static int READY = 0;
-//  final static int DEALING = 1;
-//  final static int PLAYER_TURN = 2;
-//  final static int DEALER_TURN = 3;
-//  final static int SHOW_RESULTS = 4;
   
   Game() {
     dealer = new Dealer(0,175,0);
     list   = new PlayerList(dealer);
     ui     = new UI();
     state  = GameState.READY;
-//    state = "READY";
   }
   
   void playOneFrame() {
@@ -42,14 +33,9 @@ class Game {
     cam.evaluate();                  // evaluate the camera
     
     switch ( state ) {
-//      case READY:
-//      case "READY":
       case GameState.READY:
         ui.display();                // ui only in READY state
         break;
-        
-//      case DEALING:
-//      case "DEALING":
       case GameState.DEALING:
         if ( dealer.dealCardTo(player) ) {
           nextPlayer(false);
@@ -59,18 +45,12 @@ class Game {
         }
         display();
         break;
-        
-//      case PLAYER_TURN:
-//      case "PLAYER_TURN":
       case GameState.PLAYER_TURN:
         if ( player.hand.busted ) {
           nextPlayer(true);
         }
         display();
         break;
-        
-//      case DEALER_TURN:
-//      case "DEALER_TURN":
       case GameState.DEALER_TURN:
         if ( allDone() ) {
           determineResults();
@@ -79,9 +59,6 @@ class Game {
         }
         display();
         break;
-        
-//      case SHOW_RESULTS:
-//      case "SHOW_RESULTS":
       case GameState.SHOW_RESULTS:
         display();
         list.displayResults();
@@ -102,8 +79,6 @@ class Game {
     if ( active  &&  (player == dealer) ) {
       dealer.flipCard();
       state = GameState.DEALER_TURN;
-//      state = "DEALER_TURN";
-//      state = DEALER_TURN;
     }
   }
   
@@ -115,35 +90,24 @@ class Game {
     dealer.active = false;
     list.determineResults();
     state = GameState.SHOW_RESULTS;
-//    state = "SHOW_RESULTS";
-//    state = SHOW_RESULTS;
   }
   
   void beginPlayerTurn() {
     player = list.firstPlayer(true);
     state  = GameState.PLAYER_TURN;
-//    state = "PLAYER_TURN";
-//    state = PLAYER_TURN;
   }
   
   void beginDealing() {
     list.reset();
     player = list.firstPlayer(false);
     state  = GameState.DEALING;
-//    state = "DEALING";
-//    state = DEALING;
   }
   
   void handleInput( char input ) {
     switch ( state ) {
-//      case READY:                      // which key doesn't matter
-//      case "READY":
       case GameState.READY:
         beginDealing();
         break;
-        
-//      case PLAYER_TURN:                // here which key does matter
-//      case "PLAYER_TURN":
       case GameState.PLAYER_TURN:
         switch ( input ) {
           case 'h':                      // player wants a "hit"
@@ -154,9 +118,6 @@ class Game {
             break;
         }
         break;
-        
-//      case SHOW_RESULTS:               // which key doesn't matter
-//      case "SHOW_RESULTS":
       case GameState.SHOW_RESULTS:
         beginDealing();                // skip READY and straight to DEALING
         break;

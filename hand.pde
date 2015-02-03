@@ -90,7 +90,7 @@ class Hand {
     pushMatrix();
       translate(posX,posY,0);
       if ( result != Result.NONE ) {
-//        game.ui.displayResult(result);
+        game.ui.displayResult(result);
       }
     popMatrix();
   }
